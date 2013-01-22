@@ -14,8 +14,8 @@ Couchbase Mobile is made up of a handful of components, some in the cloud or you
 The components are fairly independent, and require a little bit of elbow grease to create a full deployment, but we've built it that way for flexibility, and so we can take advantage of the stable, GA release of [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview), among other things. Here's a breakdown of the components:
 
 * [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
-* [TouchDB](https://github.com/couchbaselabs/TouchDB-iOS) -- A NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using a standard CouchDB-compatible replication protocol.
-* [Sync Gateway](https://github.com/couchbaselabs/basecouch) -- Interposed between server and client, it handles access control and synchronization, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
+* [TouchDB](https://github.com/couchbaselabs/TouchDB-iOS) -- A NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using a standard Apache CouchDB-compatible replication protocol.
+* [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) -- Interposed between server and client, it handles access control and synchronization, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
 * **Your Application** -- Couchbase Mobile delegates responsibility for data access control to your code. For each document, you specify which channels it belongs to, and for each user or device, which channels they can see.
 
 ## Roadmap
@@ -37,7 +37,7 @@ We plan to make an HTML5 version of the wiki, which can run on devices as well a
 
 **Q: Is this the same thing as Syncpoint?**
 
-A: No; Syncpoint was an earlier prototype that had similar goals but a different architecture. Couchbase Mobile has much better scalability and a simpler model for developers.
+A: No; Syncpoint was an earlier prototype that had similar goals but a different architecture. Couchbase Mobile takes advantage of Couchbase Server for scalability and provides a simpler model for developers.
 
 **Q: Wasn't "Couchbase Mobile" the old Erlang-based mobile database before TouchDB?**
 
@@ -47,10 +47,10 @@ A: Yup. But it's a good name so we're repurposing it.
 
 A: TouchDB for Android is stable enough to be used by some apps already, but it does not yet have the latest features for integration with Couchbase Mobile. We are working on it.
 
-**Q: Will Couchbase Mobile work with CouchDB servers?**
+**Q: Will Couchbase Mobile work with Apache CouchDB servers?**
 
-A: No. The Sync Gateway server has custom functionality for access control and aggregation that isn't available in CouchDB.
+A: No. The Sync Gateway server has custom functionality for access control and aggregation that isn't available in Apache CouchDB.
 
-**Q: What about my existing mobile app that uses TouchDB to sync with CouchDB?**
+**Q: What about my existing mobile app that uses TouchDB to sync with Apache CouchDB?**
 
-A: No problem! TouchDB's sync protocol will remain compatible with CouchDB's, so your app will continue to work. If you later need the capabilities of Couchbase Mobile, you can make minor changes to the mobile app to switch to it.
+A: No problem! TouchDB's sync protocol will remain compatible with Apache CouchDB's, so your app will continue to work. If you later need the capabilities of Couchbase Mobile, you can make minor changes to the mobile app to switch to it.
