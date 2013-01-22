@@ -29,7 +29,7 @@ We are actively seeking feedback from users and customers. Please [join our mail
 We are putting together example applications and getting started guides. Currently we have an iOS and and HTML5 example. The HTML5 example also includes a node.js application to handle access control.
 
 * iOS -- [TouchWiki-iOS](https://github.com/couchbaselabs/TouchWiki-iOS) is an iPad wiki that uses Markdown format.
-* HTML5 for iOS -- [TouchGap](https://github.com/couchbaselabs/TouchGap) is a generic container for PhoneGap applications that can access the data via the TouchDB ReST abstraction at `http://localhost.touchdb./mydatabase`.
+* HTML5 for iOS -- [TouchGap](https://github.com/couchbaselabs/TouchGap) is a generic container for PhoneGap applications that can access the data via the TouchDB ReST abstraction at `http://localhost.touchdb./mydatabase`. Check out the README to get started with an example photo chat app that shows off the full Couchbase Mobile authentication flow.
 
 We plan to make an HTML5 version of the wiki, which can run on devices as well as in a browser, for maximum data access.
 
