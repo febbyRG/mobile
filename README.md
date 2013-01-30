@@ -1,13 +1,13 @@
-Couchbase Mobile
+Couchbase for Mobile
 ======
 
 Sync JSON documents between Couchbase Server, iOS and Android
 
 ## What is it?
 
-Couchbase Mobile is a synchronizing database system spanning Couchbase Server in the cloud, and embedded databases on iOS and Android. It targets interactive multi-user applications which need to run reliably, offline or on. These mobile apps can share data or store it privately, and can download manageable subsets of large databases.
+Couchbase for Mobile extends Couchbase Server in the cloud with the capability to synchronize with embedded databases on iOS and Android. It targets interactive multi-user applications which need to run reliably, offline or on. These mobile apps can share data or store it privately, and can download manageable subsets of large databases.
 
-Couchbase Mobile is made up of a handful of components, some in the cloud or your datacenter, others on mobile devices. Here's an architecture diagram.
+Couchbase for Mobile is made up of a handful of components, some in the cloud or your datacenter, others on mobile devices. Here's an architecture diagram.
 
 ![Couchbase Mobile Architecture](http://jchris.ic.ht/files/slides/mobile-arch.png)
 
