@@ -14,13 +14,13 @@ Couchbase for Mobile is made up of a handful of components, some in the cloud or
 The components are fairly independent, and require a little bit of elbow grease to create a full deployment, but we've built it that way for flexibility, and so we can take advantage of the stable, GA release of [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview), among other things. Here's a breakdown of the components:
 
 * [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
-* [TouchDB](https://github.com/couchbaselabs/TouchDB-iOS) -- A NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using a standard Apache CouchDB-compatible replication protocol.
+* [Couchbase Lite](https://github.com/couchbaselabs/TouchDB-iOS) -- A NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using a standard Apache CouchDB-compatible replication protocol.
 * [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) -- Interposed between server and client, it handles access control and synchronization, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
 * **Your Application** -- Couchbase Mobile delegates responsibility for data access control to your code. For each document, you specify which channels it belongs to, and for each user or device, which channels they can see.
 
 ## Roadmap
 
-While the Couchbase Server and [TouchDB-iOS](https://github.com/couchbaselabs/TouchDB-iOS/wiki/TouchDB-In-The-Wild) components are already in production, the other components are brand new, so the big picture is **experimental**.
+While the Couchbase Server and [Couchbase Lite](https://github.com/couchbaselabs/TouchDB-iOS/wiki/TouchDB-In-The-Wild) components are already in production, the other components are brand new, so the big picture is **experimental**.
 
 We are actively seeking feedback from users and customers. Please [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss improvements, report bugs, or get help with your applications.
 
@@ -29,7 +29,7 @@ We are actively seeking feedback from users and customers. Please [join our mail
 We are putting together example applications and getting started guides. Currently we have an iOS and and HTML5 example. The HTML5 example also includes a node.js application to handle access control.
 
 * iOS -- [TouchWiki-iOS](https://github.com/couchbaselabs/TouchWiki-iOS) is an iPad wiki that uses Markdown format.
-* HTML5 for iOS -- [TouchGap](https://github.com/couchbaselabs/TouchGap) is a generic container for PhoneGap applications that can access the data via the TouchDB ReST abstraction at `http://localhost.touchdb./mydatabase`. Check out the README to get started with an example photo chat app that shows off the full Couchbase Mobile authentication flow.
+* HTML5 for iOS -- [TouchGap](https://github.com/couchbaselabs/TouchGap) is a generic container for PhoneGap applications that can access the data via the Couchbase Lite ReST abstraction at `http://localhost.touchdb./mydatabase`. Check out the README to get started with an example photo chat app that shows off the full Couchbase Mobile authentication flow.
 
 We plan to make an HTML5 version of the wiki, which can run on devices as well as in a browser, for maximum data access.
 
@@ -51,6 +51,6 @@ A: TouchDB for Android is stable enough to be used by some apps already, but it 
 
 A: No. The Sync Gateway server has custom functionality for access control and aggregation that isn't available in Apache CouchDB.
 
-**Q: What about my existing mobile app that uses TouchDB to sync with Apache CouchDB?**
+**Q: What about my existing mobile app that uses Couchbase Lite to sync with Apache CouchDB?**
 
-A: No problem! TouchDB's sync protocol will remain compatible with Apache CouchDB's, so your app will continue to work. If you later need the capabilities of Couchbase Mobile, you can make minor changes to the mobile app to switch to it.
+A: No problem! Couchbase Lite's sync protocol will remain compatible with Apache CouchDB's, so your app will continue to work. If you later need the capabilities of Couchbase Mobile, you can make minor changes to the mobile app to switch to it.
