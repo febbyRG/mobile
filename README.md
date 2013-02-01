@@ -14,7 +14,7 @@ Couchbase for Mobile is made up of a handful of components, some in the cloud or
 The components are fairly independent, and require a little bit of elbow grease to create a full deployment, but we've built it that way for flexibility, and so we can take advantage of the stable, GA release of [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview), among other things. Here's a breakdown of the components:
 
 * [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
-* [Couchbase Lite](https://github.com/couchbaselabs/TouchDB-iOS) -- A NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using a standard Apache CouchDB-compatible replication protocol.
+* [Couchbase Lite](https://github.com/couchbase/couchbase-lite-ios) -- A NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using a standard Apache CouchDB-compatible replication protocol.
 * [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) -- Interposed between server and client, it handles access control and synchronization, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
 * **Your Application** -- Couchbase Mobile delegates responsibility for data access control to your code. For each document, you specify which channels it belongs to, and for each user or device, which channels they can see.
 
