@@ -48,7 +48,7 @@ The HTML version of the chat application uses the same data structures, and is d
 
 We are currently producing nightly and stable builds of the various components (linked from their individual READMEs). We plan to push out an initial preview release of the server side and iOS client side components in May, and then to do another preview release including the Android client this summer, before going Beta in the fall. After that we'll make a beeline for a GA release so that we can start officially supporting people with mission-critical use cases.
 
-For a detailed idea of what we are working on, the issues list on [Couchbase Lite iOS]() and [Sync Gateway]() is the place to go. Broadly speaking, between now and GA we are working on security, stability and scalability, with only a few new features planned. This means you should be able to start developing today and transition to the Beta and GA releases without making big changes to your code.
+For a detailed look at what we are working on, the issues list on [Couchbase Lite iOS](https://github.com/couchbase/couchbase-lite-ios/issues) and [Sync Gateway](https://github.com/couchbaselabs/sync_gateway/issues) is the place to go. Broadly speaking, between now and GA we are working on security, stability and scalability, with only a few new features planned. This means you should be able to start developing today and transition to the Beta and GA releases without making big changes to your code.
 
 As always, we are actively seeking feedback. Please [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss improvements, report bugs, or get help with your applications.
 
