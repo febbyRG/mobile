@@ -3,35 +3,55 @@ Couchbase for Mobile
 
 Sync JSON documents between Couchbase Server, iOS and Android
 
-## What is it?
+## Why Sync?
 
-Couchbase for Mobile extends Couchbase Server in the cloud with the capability to synchronize with embedded databases on iOS and Android. It targets interactive multi-user applications which need to run reliably, offline or on. These mobile apps can share data or store it privately, and can download manageable subsets of large databases.
+Syncronization is the future of mobile data. Users love services like Dropbox, because they know they can access their data no matter what, even if they are offline or on a slow network. The reliability and performance of data stored on your device can't be beat by any remote storage. The advantages to sync are so strong that even Apple is getting into the game with iCloud.
 
-Couchbase for Mobile is made up of a handful of components, some in the cloud or your datacenter, others on mobile devices. Here's an architecture diagram.
+Neither Dropbox or iCloud really offer what developers want. Dropbox is for files, not application data, so while you can jump through hoops to sync a database file with it, as soon as you have more than one user editing the same data at the same time, all bets are off. iCloud, even on it's best days, doesn't give developers much access to query over the complete data their application has generated. Without this sort of access, it's hard to discover user trends, or provide aggregations either to your business or to your users.
+
+Couchbase Mobile is open-source, so you can run it in your datacenter or in the cloud. It speaks an industry standard, proven synchronization protocol, so you can interoperate with other sync systems across your stack. The mobile sync client, Couchbase Lite, is implemented in native code for both iOS and Android, so it's lightweight and adds minimal overhead to your application download and launch time. Quit agonizing over network reachability errors and focus on adding value to your application. We're here to help.
+
+## Couchbase Mobile tech stack
+
+Couchbase Mobile is made up of a handful of components, some in the cloud or your datacenter, others on mobile devices. Here's an architecture diagram.
 
 ![Couchbase Mobile Architecture](http://jchris.ic.ht/files/slides/mobile-arch.png)
 
-The components are fairly independent, and require a little bit of elbow grease to create a full deployment, but we've built it that way for flexibility, and so we can take advantage of the stable, GA release of [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview), among other things. Here's a breakdown of the components:
-
 * [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
-* [Couchbase Lite](https://github.com/couchbase/couchbase-lite-ios) -- A NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using a standard Apache CouchDB-compatible replication protocol.
-* [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) -- Interposed between server and client, it handles access control and synchronization, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
-* **Your Application** -- Couchbase Mobile delegates responsibility for data access control to your code. For each document, you specify which channels it belongs to, and for each user or device, which channels they can see.
+* [Couchbase Lite](https://github.com/couchbase/couchbase-lite-ios) -- A lightweight NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using the standard Apache CouchDB-compatible replication protocol.
+* The [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) manages HTTP-based data access for mobile clients. It handles access control and data routing, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
+* **Your Application** -- Couchbase Mobile gives your application fine-grained control over data access and routing. For each document, you specify a set of channels it belongs to, and for each user or device, you control which channels they can see.
+
+## Use Cases
+
+We've been working with community users and customers alike to fine tune Couchbase Mobile for thier use cases. Here is an incomplete list of the type of applications we expect to benefit from mobile sync:
+
+* Medical Records - this data is a great fit for schemaless JSON storage. It's also critical that it be available wherever the health care provider goes, regardless of network conditions.
+* Customer Loyalty and Point of Sale - we see a lot of these apps already using our sync technology, and we've been working with some developers closely to ensure a smooth ride.
+* Airline - pilots and flight attendants benefit from having easy access to data about passengers and flight plans, with the ability to dynamically refresh the data when they are on the ground.
+* Fleet Management - tracking vehicle telemetry and routing it to the cloud when connections are available is a great fit for Couchbase Mobile
+* Social Media - chat and game companies often take a portfolio approach. By offloading the details of pushing data across mobile networks, they can focus on rolling out compelling content that utilizes a common backbone.
+
+## Get Started w/ Tutorials
+
+As of April 2013 we have example code for native iOS applications, and for HTML5 PhoneGap / Cordova apps on iOS. We'll be bringing our Android examples and tutorials up to parity in the next few months. We've been working on this mobile project since mid 2010, so there are a lot of older examples out there, too. We'd like to bring them all up to date over time, but for now we are focussing on making a few of them really easy to follow. Watch this list to see what's available as we expand our supported tutorials.
+
+### Native iOS
+
+The native iOS chat application, [CouchChat-iOS](https://github.com/couchbaselabs/CouchChat-iOS), illustrates how users can dynamically create channels and invite other users to join them. You should probably skim the README of this app even if you plan to start with the PhoneGap tutorial, because it covers the server-side data routing and access control in more detail.
+
+### PhoneGap / Cordova
+
+The HTML version of the chat application uses the same data structures, and is designed to interoperate with the native version of the app. So you should be able to chat with groups of people who are using both the HTML5 and the native version. Because the data structures are the same, this example doesn't include the server-side SyncGateway configuration. Instead it explains how to use the configuration that is part of the CouchChat-iOS repo, as the backend for your HTML5 data sync.
 
 ## Roadmap
 
-While the Couchbase Server and [Couchbase Lite](https://github.com/couchbaselabs/TouchDB-iOS/wiki/TouchDB-In-The-Wild) components are already in production, the other components are brand new, so the big picture is **experimental**.
+We are currently producing nightly and stable builds of the various components (linked from their individual READMEs). We plan to push out an initial preview release of the server side and iOS client side components in May, and then to do another preview release including the Android client this summer, before going Beta in the fall. After that we'll make a beeline for a GA release so that we can start officially supporting people with mission-critical use cases.
 
-We are actively seeking feedback from users and customers. Please [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss improvements, report bugs, or get help with your applications.
+For a detailed idea of what we are working on, the issues list on [Couchbase Lite iOS]() and [Sync Gateway]() is the place to go. Broadly speaking, between now and GA we are working on security, stability and scalability, with only a few new features planned. This means you should be able to start developing today and transition to the Beta and GA releases without making big changes to your code.
 
-## Getting Started
+As always, we are actively seeking feedback. Please [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss improvements, report bugs, or get help with your applications.
 
-We are putting together example applications and getting started guides. Currently we have an iOS and and HTML5 example. The HTML5 example also includes a node.js application to handle access control.
-
-* iOS -- [TouchWiki-iOS](https://github.com/couchbaselabs/TouchWiki-iOS) is an iPad wiki that uses Markdown format.
-* HTML5 for iOS -- [TouchGap](https://github.com/couchbaselabs/TouchGap) is a generic container for PhoneGap applications that can access the data via the Couchbase Lite ReST abstraction at `http://localhost.touchdb./mydatabase`. Check out the README to get started with an example photo chat app that shows off the full Couchbase Mobile authentication flow.
-
-We plan to make an HTML5 version of the wiki, which can run on devices as well as in a browser, for maximum data access.
 
 ## FAQ
 
@@ -49,8 +69,8 @@ A: TouchDB for Android is stable enough to be used by some apps already, but it 
 
 **Q: Will Couchbase Mobile work with Apache CouchDB servers?**
 
-A: No. The Sync Gateway server has custom functionality for access control and aggregation that isn't available in Apache CouchDB.
+A: No. The Sync Gateway server has custom functionality for access control and data routing that isn't available in Apache CouchDB.
 
 **Q: What about my existing mobile app that uses Couchbase Lite to sync with Apache CouchDB?**
 
-A: No problem! Couchbase Lite's sync protocol will remain compatible with Apache CouchDB's, so your app will continue to work. If you later need the capabilities of Couchbase Mobile, you can make minor changes to the mobile app to switch to it.
+A: No problem! Couchbase Lite's sync protocol will remain compatible with Apache CouchDB's, so your app will continue to work. If you later need the full capabilities of Couchbase Mobile, you can make minor changes to the mobile app to switch to it.
