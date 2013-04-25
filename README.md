@@ -44,6 +44,8 @@ The native iOS chat application, [CouchChat-iOS](https://github.com/couchbaselab
 
 The HTML version of the chat application uses the same data structures, and is designed to interoperate with the native version of the app. So you should be able to chat with groups of people who are using both the HTML5 and the native version. Because the data structures are the same, this example doesn't include the server-side SyncGateway configuration. Instead it explains how to use the configuration that is part of the CouchChat-iOS repo, as the backend for your HTML5 data sync.
 
+Here are [instructions to build a PhoneGap container](https://github.com/couchbaselabs/LiteGap/wiki/Building-a-PhoneGap-Couchbase-Lite-Container) and a link to the [PhoneGap Chat example](https://github.com/couchbaselabs/CouchChat-PhoneGap).
+
 ## Roadmap
 
 We are currently producing nightly and stable builds of the various components (linked from their individual READMEs). We plan to push out an initial preview release of the server side and iOS client side components in May, and then to do another preview release including the Android client this summer, before going Beta in the fall. After that we'll make a beeline for a GA release so that we can start officially supporting people with mission-critical use cases.
