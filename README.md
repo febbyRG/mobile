@@ -1,7 +1,7 @@
-Couchbase for Mobile
+Couchbase Mobile
 ======
 
-Sync JSON documents between Couchbase Server, iOS and Android
+Sync JSON documents between Couchbase Server and Couchbase Lite on iOS and Android.
 
 ## Why Sync?
 
@@ -9,11 +9,13 @@ Syncronization is the future of mobile data. Users love services like Dropbox, b
 
 Neither Dropbox or iCloud really offer what developers want. Dropbox is for files, not application data, so while you can jump through hoops to sync a database file with it, as soon as you have more than one user editing the same data at the same time, all bets are off. iCloud, even on it's best days, doesn't give developers much access to query over the complete data their application has generated. Without this sort of access, it's hard to discover user trends, or provide aggregations either to your business or to your users.
 
-Couchbase Mobile is open-source, so you can run it in your datacenter or in the cloud. It speaks an industry standard, proven synchronization protocol, so you can interoperate with other sync systems across your stack. The mobile sync client, Couchbase Lite, is implemented in native code for both iOS and Android, so it's lightweight and adds minimal overhead to your application download and launch time. Quit agonizing over network reachability errors and focus on adding value to your application. We're here to help.
+Couchbase Lite speaks an [industry standard, proven synchronization protocol](https://github.com/couchbase/couchbase-lite-ios/wiki/Replication-Algorithm). It's native on iOS and Android, so it's lightweight optimized for app download and launch time. Quit agonizing over network reachability errors and focus on adding value to your application.
 
-## Couchbase Mobile tech stack
+## Mobile Tech Stack
 
-Couchbase Mobile is made up of a handful of components, some in the cloud or your datacenter, others on mobile devices. Here's an architecture diagram.
+Couchbase Lite enables sync on your handset, and includes a sync gateway in the download to handle the server side of your sync apps. In production you'd run the sync gateway using Couchbase Server for storage, so you can handle a growing userbase with confidence.
+
+Here's an architecture diagram.
 
 ![Couchbase Mobile Architecture](http://jchris.ic.ht/files/slides/mobile-arch.png)
 
