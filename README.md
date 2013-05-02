@@ -20,11 +20,11 @@ Couchbase Lite enables sync on your handset, and includes a sync gateway in the 
 * [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
 * [Couchbase Lite](https://github.com/couchbase/couchbase-lite-ios) -- A lightweight NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using the standard Apache CouchDB-compatible replication protocol.
 * The [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) manages HTTP-based data access for mobile clients. It handles access control and data routing, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
-* **Your Application** -- Couchbase Mobile gives your application fine-grained control over data access and routing. For each document, you specify a set of channels it belongs to, and for each user or device, you control which channels they can see.
+* **Your Application** -- Your application has fine-grained control over data access and routing. For each document, you specify a set of [channels it belongs to, and for each user or device, you control which channels they can see.](https://github.com/couchbaselabs/sync_gateway/wiki/channels-access-control-and-data-routing-w-sync-function)
 
 ## Use Cases
 
-We've been working with community users and customers alike to fine tune Couchbase Mobile for thier use cases. Here is an incomplete list of the type of applications we expect to benefit from mobile sync:
+We've been working with community users and customers on use cases like this:
 
 * Medical Records - this data is a great fit for schemaless JSON storage. It's also critical that it be available wherever the health care provider goes, regardless of network conditions.
 * Customer Loyalty and Point of Sale - we see a lot of these apps already using our sync technology, and we've been working with some developers closely to ensure a smooth ride.
