@@ -15,8 +15,6 @@ Couchbase Lite speaks an [industry standard, proven synchronization protocol](ht
 
 Couchbase Lite enables sync on your handset, and includes a sync gateway in the download to handle the server side of your sync apps. In production you'd run the sync gateway using Couchbase Server for storage, so you can handle a growing userbase with confidence.
 
-Here's an architecture diagram.
-
 ![Couchbase Mobile Architecture](http://jchris.ic.ht/files/slides/mobile-arch.png)
 
 * [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
@@ -36,7 +34,7 @@ We've been working with community users and customers alike to fine tune Couchba
 
 ## Get Started w/ Tutorials
 
-As of April 2013 we have example code for native iOS applications, and for HTML5 PhoneGap / Cordova apps on iOS. We'll be bringing our Android examples and tutorials up to parity in the next few months. We've been working on this mobile project since mid 2010, so there are a lot of older examples out there, too. We'd like to bring them all up to date over time, but for now we are focussing on making a few of them really easy to follow. Watch this list to see what's available as we expand our supported tutorials.
+As of April 2013 we have example code for native iOS applications, and for HTML5 PhoneGap / Cordova apps on iOS. We'll be bringing our Android examples and tutorials up to parity in the next few months. There are also a lot of older examples out there. We'd like to bring them all up to date over time, but for now we are focussing on making a few of them really easy to follow. Watch this list to see what's available as we expand our supported tutorials.
 
 ### Native iOS
 
