@@ -38,7 +38,7 @@ As of April 2013 we have example code for native iOS applications, and for HTML5
 
 ### Native iOS
 
-The native iOS chat application, [CouchChat-iOS](https://github.com/couchbaselabs/CouchChat-iOS), illustrates how users can dynamically create channels and invite other users to join them. You should probably skim the README of this app even if you plan to start with the PhoneGap tutorial, because it covers the server-side data routing and access control in more detail.
+The native iOS chat application, [CouchChat-iOS](https://github.com/couchbaselabs/CouchChat-iOS), illustrates how users can dynamically create channels and invite other users to join them. Even if you plan to start with the PhoneGap tutorial, [check out this tour of the data model. It covers the data routing and access control in more detail](https://github.com/couchbaselabs/CouchChat-iOS/wiki/Chat-App-Data-Model).
 
 ### PhoneGap / Cordova
 
