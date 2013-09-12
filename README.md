@@ -1,7 +1,7 @@
-Couchbase Mobile
+JSON Anywhere
 ======
 
-Sync JSON documents between Couchbase Server and Couchbase Lite on iOS and Android.
+JSON on the device, on the wire, and in the cloud. Sync JSON documents between Couchbase Server and Couchbase Lite on iOS and Android.
 
 ## Why Sync?
 
@@ -18,9 +18,9 @@ Couchbase Lite enables sync on your handset, and includes a sync gateway in the 
 ![Couchbase Mobile Architecture](http://jchris.ic.ht/files/slides/mobile-arch.png)
 
 * [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
-* [Couchbase Lite](https://github.com/couchbase/couchbase-lite-ios) -- A lightweight NoSQL database for iOS or [Android](https://github.com/couchbaselabs/TouchDB-Android) that provides a native API as well as robust synchronization capabilities using the standard Apache CouchDB-compatible replication protocol.
 * The [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) manages HTTP-based data access for mobile clients. It handles access control and data routing, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
-* **Your Application** -- Your application has fine-grained control over data access and routing. For each document, you specify a set of [channels it belongs to, and for each user or device, you control which channels they can see.](https://github.com/couchbaselabs/sync_gateway/wiki/channels-access-control-and-data-routing-w-sync-function)
+* Couchbase Lite -- A lightweight NoSQL database for [iOS](https://github.com/couchbase/couchbase-lite-ios/) or [Android](https://github.com/couchbase/couchbase-lite-android/) that provides a native API as well as robust synchronization capabilities using the standard Apache CouchDB-compatible replication protocol.
+* **Your Application** -- Your application has fine-grained control over data access and routing. For each document, you specify a set of [channels it belongs to, and for each user or device, you control which channels they can see.](https://github.com/couchbase/sync_gateway/wiki/channels-access-control-and-data-routing-w-sync-function)
 
 ## Use Cases
 
@@ -34,7 +34,7 @@ We've been working with community users and customers on use cases like this:
 
 ## Get Started w/ Tutorials
 
-As of April 2013 we have example code for native iOS applications, and for HTML5 PhoneGap / Cordova apps on iOS. We'll be bringing our Android examples and tutorials up to parity in the next few months. There are also a lot of older examples out there. We'd like to bring them all up to date over time, but for now we are focussing on making a few of them really easy to follow. Watch this list to see what's available as we expand our supported tutorials.
+As of 2013 we have example code for native iOS applications, and for HTML5 PhoneGap / Cordova apps on iOS. We'll be bringing our Android examples and tutorials up to parity in the next few months. There are also a lot of older examples out there. We'd like to bring them all up to date over time, but for now we are focussing on making a few of them really easy to follow. Watch this list to see what's available as we expand our supported tutorials.
 
 ### Native iOS
 
@@ -50,7 +50,7 @@ Here are [instructions to build a PhoneGap container](https://github.com/couchba
 
 We are currently producing nightly and stable builds of the various components (linked from their individual READMEs). We plan to push out an initial preview release of the server side and iOS client side components in May, and then to do another preview release including the Android client this summer, before going Beta in the fall. After that we'll make a beeline for a GA release so that we can start officially supporting people with mission-critical use cases.
 
-For a detailed look at what we are working on, the issues list on [Couchbase Lite iOS](https://github.com/couchbase/couchbase-lite-ios/issues) and [Sync Gateway](https://github.com/couchbaselabs/sync_gateway/issues) is the place to go. Broadly speaking, between now and GA we are working on security, stability and scalability, with only a few new features planned. This means you should be able to start developing today and transition to the Beta and GA releases without making big changes to your code.
+For a detailed look at what we are working on, the issues list on [Couchbase Lite iOS](https://github.com/couchbase/couchbase-lite-ios/issues), [Couchbase Lite Android](https://github.com/couchbase/couchbase-lite-android/issues) and [Sync Gateway](https://github.com/couchbase/sync_gateway/issues) is the place to go. Broadly speaking, between now and GA we are working on security, stability and scalability, with only a few new features planned. This means you should be able to start developing today and transition to the Beta and GA releases without making big changes to your code.
 
 As always, we are actively seeking feedback. Please [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss improvements, report bugs, or get help with your applications.
 
@@ -61,15 +61,7 @@ As always, we are actively seeking feedback. Please [join our mailing list](http
 
 A: No; Syncpoint was an earlier prototype that had similar goals but a different architecture. Couchbase Mobile takes advantage of Couchbase Server for scalability and provides a simpler model for developers.
 
-**Q: Wasn't "Couchbase Mobile" the old Erlang-based mobile database before TouchDB?**
-
-A: Yup. But it's a good name so we're repurposing it.
-
-**Q: What about Android?**
-
-A: TouchDB for Android is stable enough to be used by some apps already, but it does not yet have the latest features for integration with Couchbase Mobile. We are working on it.
-
-**Q: Will Couchbase Mobile work with Apache CouchDB servers?**
+**Q: Will Couchbase Lite work with Apache CouchDB servers?**
 
 A: No. The Sync Gateway server has custom functionality for access control and data routing that isn't available in Apache CouchDB.
 
