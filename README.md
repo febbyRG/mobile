@@ -1,11 +1,15 @@
-JSON Anywhere
+Couchbase Mobile 
 ======
 
-JSON on the device, on the wire, and in the cloud. Sync JSON documents between Couchbase Server and Couchbase Lite on iOS and Android.
+Please visit our [mobile developer portal for the latest downloads and documentation of Couchbase Sync Gateway and Couchbase Lite.](http://developer.couchbase.com/mobile/)
+
+## JSON Anywhere
+
+JSON on the device, on the wire, and in the cloud. Sync JSON documents between Couchbase Server and Couchbase Lite on iOS, Android, .NET, the JVM, and more.
 
 ## Why Sync?
 
-Syncronization is the future of mobile data. Users love services like Dropbox, because they know they can access their data no matter what, even if they are offline or on a slow network. The reliability and performance of data stored on your device can't be beat by any remote storage. The advantages to sync are so strong that even Apple is getting into the game with iCloud.
+Synchronization is the future of mobile data. Users love services like Dropbox, because they know they can access their data no matter what, even if they are offline or on a slow network. The reliability and performance of data stored on your device can't be beat by any remote storage. The advantages to sync are so strong that even Apple is getting into the game with iCloud.
 
 Neither Dropbox or iCloud really offer what developers want. Dropbox is for files, not application data, so while you can jump through hoops to sync a database file with it, as soon as you have more than one user editing the same data at the same time, all bets are off. iCloud, even on it's best days, doesn't give developers much access to query over the complete data their application has generated. Without this sort of access, it's hard to discover user trends, or provide aggregations either to your business or to your users.
 
