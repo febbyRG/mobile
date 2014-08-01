@@ -59,7 +59,7 @@ A sneak peek into some of the work we are looking to roll-out next include:
 
 ##Community
 
-As always, we are actively seeking feedback. Please [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss improvements, report bugs, or get help with your applications.
+We are an open source team and as always, we are actively seeking feedback. We use GitHub extensively to build and collaborate, so do feel free to contribute by sending us issues, pull requests, and feature requests/enhancements! In addition, [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss your use case, suggest improvements or get help with your applications.
 
 
 ## FAQ
