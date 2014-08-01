@@ -1,0 +1,15 @@
+[submodule "sync-gateway"]
+	path = sync-gateway
+	url = https://github.com/couchbase/sync_gateway
+[submodule "couchbase-lite/ios"]
+	path = couchbase-lite/ios
+	url = https://github.com/couchbase/couchbase-lite-ios
+[submodule "couchbase-lite/android"]
+	path = couchbase-lite/android
+	url = https://github.com/couchbase/couchbase-lite-android
+[submodule "couchbase-lite/java"]
+	path = couchbase-lite/java
+	url = https://github.com/couchbase/couchbase-lite-java
+[submodule "couchbase-lite/net"]
+	path = couchbase-lite/net
+	url = https://github.com/couchbaselabs/couchbase-lite-net
