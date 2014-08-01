@@ -1,60 +1,63 @@
 Couchbase Mobile 
 ======
 
-Please visit our [mobile developer portal for the latest downloads and documentation of Couchbase Sync Gateway and Couchbase Lite.](http://developer.couchbase.com/mobile/)
+The modern app experience is decent, but it could always be better, more present, and more responsive. We want developers to be prepared for the next generation of apps that demand to be always-present and always-responsive, but without the expensive development and deployment costs usually associated with solutions, such as SAP Anywhere.
 
-## JSON Anywhere
+We also want our developers to have options, flexibility, and the ability to grow. As a NoSQL leader, we looked to build a robust platform that mobile developers can easily understand and build on top of. 
 
-JSON on the device, on the wire, and in the cloud. Sync JSON documents between Couchbase Server and Couchbase Lite on iOS, Android, .NET, the JVM, and more.
+We're excited to introduce [**Couchbase Mobile**](http://www.couchbase.com/mobile), a suite of products that make remote app and syncing experiences easy. Couchbase Mobile introduces two major new products that you can find here in accompaniment with our main product, Couchbase Server. They are as follows:
 
-## Why Sync?
+* **Couchbase Lite** - On-device, lightweight, native, embedded JSON database. We support Objective-C, Android Java, Java and .NET.
+* **Couchbase Sync Gateway** - A scalable secure sync tier.
+* **Couchbase Server** - A high-performance, scalable, JSON database that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
 
-Synchronization is the future of mobile data. Users love services like Dropbox, because they know they can access their data no matter what, even if they are offline or on a slow network. The reliability and performance of data stored on your device can't be beat by any remote storage. The advantages to sync are so strong that even Apple is getting into the game with iCloud.
+Visit our [mobile developer portal](http://developer.couchbase.com/mobile/) for the latest downloads and documentation of Couchbase Sync Gateway and Couchbase Lite, and learn more about Couchbase Server [here](http://www.couchbase.com/couchbase-server/overview)
 
-Neither Dropbox or iCloud really offer what developers want. Dropbox is for files, not application data, so while you can jump through hoops to sync a database file with it, as soon as you have more than one user editing the same data at the same time, all bets are off. iCloud, even on it's best days, doesn't give developers much access to query over the complete data their application has generated. Without this sort of access, it's hard to discover user trends, or provide aggregations either to your business or to your users.
-
-Couchbase Lite speaks an [industry standard, proven synchronization protocol](https://github.com/couchbase/couchbase-lite-ios/wiki/Replication-Algorithm). It's native on iOS and Android, so it's lightweight optimized for app download and launch time. Quit agonizing over network reachability errors and focus on adding value to your application.
-
-## Mobile Tech Stack
-
-Couchbase Lite enables sync on your handset, and includes a sync gateway in the download to handle the server side of your sync apps. In production you'd run the sync gateway using Couchbase Server for storage, so you can handle a growing userbase with confidence.
-
-![Couchbase Mobile Architecture](http://jchris.ic.ht/files/slides/mobile-arch.png)
-
-* [Couchbase Server 2.0](http://www.couchbase.com/couchbase-server/overview) -- High performance scalable NoSQL storage that's been battle-tested in heavy-traffic mission critical deployments serving millions of users.
-* The [Sync Gateway](https://github.com/couchbaselabs/sync_gateway) manages HTTP-based data access for mobile clients. It handles access control and data routing, so that a single large Couchbase Server cluster can manage data for multiple users and complex applications.
-* Couchbase Lite -- A lightweight NoSQL database for [iOS](https://github.com/couchbase/couchbase-lite-ios/) or [Android](https://github.com/couchbase/couchbase-lite-android/) that provides a native API as well as robust synchronization capabilities using the standard Apache CouchDB-compatible replication protocol.
-* **Your Application** -- Your application has fine-grained control over data access and routing. For each document, you specify a set of [channels it belongs to, and for each user or device, you control which channels they can see.](https://github.com/couchbase/sync_gateway/wiki/channels-access-control-and-data-routing-w-sync-function)
+Or, step right into our code! You will find our main project repos above.
 
 ## Use Cases
 
-We've been working with community users and customers on use cases like this:
+We've been working with community users and customers on use cases like:
 
-* Medical Records - this data is a great fit for schemaless JSON storage. It's also critical that it be available wherever the health care provider goes, regardless of network conditions.
-* Customer Loyalty and Point of Sale - we see a lot of these apps already using our sync technology, and we've been working with some developers closely to ensure a smooth ride.
-* Airline - pilots and flight attendants benefit from having easy access to data about passengers and flight plans, with the ability to dynamically refresh the data when they are on the ground.
-* Fleet Management - tracking vehicle telemetry and routing it to the cloud when connections are available is a great fit for Couchbase Mobile
-* Social Media - chat and game companies often take a portfolio approach. By offloading the details of pushing data across mobile networks, they can focus on rolling out compelling content that utilizes a common backbone.
+* **Medical records** - this data is a great fit for schemaless JSON storage. It's also critical that it be available wherever the health care provider goes, regardless of network conditions.
+* **Customer loyalty and Point-of-Sale** - we see a lot of these apps already using our sync technology, and we've been working with some developers closely to ensure a smooth ride.
+* **Airline in-flight customer support** - pilots and flight attendants benefit from having easy access to data about passengers and flight plans, with the ability to dynamically refresh the data when they are on the ground.
+* **Delivery vehicle fleet management** - tracking vehicle telemetry and routing it to the cloud when connections are available is a great fit for Couchbase Mobile
+* **Social media platforms** - chat and game companies often take a portfolio approach. By offloading the details of pushing data across mobile networks, they can focus on rolling out compelling content that utilizes a common backbone.
 
-## Get Started w/ Tutorials
-
-As of 2013 we have example code for native iOS applications, and for HTML5 PhoneGap / Cordova apps on iOS. We'll be bringing our Android examples and tutorials up to parity in the next few months. There are also a lot of older examples out there. We'd like to bring them all up to date over time, but for now we are focussing on making a few of them really easy to follow. Watch this list to see what's available as we expand our supported tutorials.
-
-### Native iOS
-
-The native iOS chat application, [CouchChat-iOS](https://github.com/couchbaselabs/CouchChat-iOS), illustrates how users can dynamically create channels and invite other users to join them. Even if you plan to start with the PhoneGap tutorial, [check out this tour of the data model. It covers the data routing and access control in more detail](https://github.com/couchbaselabs/CouchChat-iOS/wiki/Chat-App-Data-Model).
+##Cross-platform tool support
+In addition to client-side native support for iOS, Android, Java and .NET, we also are integrated with some of the most popular mobile platforms today.
 
 ### PhoneGap / Cordova
 
-The HTML version of the chat application uses the same data structures, and is designed to interoperate with the native version of the app. So you should be able to chat with groups of people who are using both the HTML5 and the native version. Because the data structures are the same, this example doesn't include the server-side SyncGateway configuration. Instead it explains how to use the configuration that is part of the CouchChat-iOS repo, as the backend for your HTML5 data sync.
+HTML5 developers can build rich hybrid apps backed by our Couchbase Mobile stack, with our support for the PhoneGap/Cordova platform. 
 
-Here are [instructions to build a PhoneGap container](https://github.com/couchbaselabs/LiteGap/wiki/Building-a-PhoneGap-Couchbase-Lite-Container) and a link to the [PhoneGap Chat example](https://github.com/couchbaselabs/CouchChat-PhoneGap).
+You can check out the [Cordova component](http://plugins.cordova.io/#/package/com.couchbase.lite.phonegap), or visit the GitHub repo right [here](https://github.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin).
+
+For an example app, visit our PhoneGap tutorial to get started off of our Developer Portal, [here](http://developer.couchbase.com/mobile/get-started/get-started-mobile/phonegap/index.html).
+
+### Xamarin
+
+Similarly, we provide support to .NET developers looking to do cross-platform development for iOS and Android with Xamarin. This project sources from our on-going .NET client development to bring a rich and broad set of supports for .NET developers.
+
+You can learn more from our [Xamarin component page](http://components.xamarin.com/view/couchbase-lite-net/), or visit our GitHub repo right [here](https://github.com/couchbaselabs/couchbase-lite-net/).
 
 ## Roadmap
 
-We are currently producing nightly and stable builds of the various components (linked from their individual READMEs). We plan to push out an initial preview release of the server side and iOS client side components in May, and then to do another preview release including the Android client this summer, before going Beta in the fall. After that we'll make a beeline for a GA release so that we can start officially supporting people with mission-critical use cases.
+We're continuing to develop support for a variety of languages and platforms for our Couchbase Lite client, with plans to buid Javascript and Unity support in the works.
 
-For a detailed look at what we are working on, the issues list on [Couchbase Lite iOS](https://github.com/couchbase/couchbase-lite-ios/issues), [Couchbase Lite Android](https://github.com/couchbase/couchbase-lite-android/issues) and [Sync Gateway](https://github.com/couchbase/sync_gateway/issues) is the place to go. Broadly speaking, between now and GA we are working on security, stability and scalability, with only a few new features planned. This means you should be able to start developing today and transition to the Beta and GA releases without making big changes to your code.
+But, we have plenty of room to grow in feature work on both the local client, and at the sync tier. We also are continuing to push the boundaries for performance and scaling with our products.
+
+A sneak peek into some of the work we are looking to roll-out next include:
+
+* Security features, including local encryption
+* Raising the limit for Attachment sizes
+* More granular replication options, such as channel subsets based on time, geography, and more
+* Pushing map/reduce requests from client to server
+* Developer and admin tooling
+* Better support for P2P use cases
+
+##Community
 
 As always, we are actively seeking feedback. Please [join our mailing list](https://groups.google.com/forum/#!forum/mobile-couchbase) to discuss improvements, report bugs, or get help with your applications.
 
